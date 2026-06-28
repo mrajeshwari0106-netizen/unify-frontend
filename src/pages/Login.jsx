@@ -115,7 +115,6 @@ export default function Login() {
   </button>
 </div>
 
-const [showPassword, setShowPassword] = useState(false);
           {mode === 'register' && (
             <select style={styles.input} name="role" value={form.role} onChange={handle}>
               <option value="CITIZEN">Citizen</option>
