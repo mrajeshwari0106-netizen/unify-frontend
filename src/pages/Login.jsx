@@ -84,15 +84,37 @@ export default function Login() {
             onChange={handle}
             onKeyDown={handleKey}
           />
-          <input
-            style={styles.input}
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handle}
-            onKeyDown={handleKey}
-          />
+          <div style={{ position: 'relative', marginBottom: 12 }}>
+  <input
+    style={{ ...styles.input, marginBottom: 0 }}
+    name="password"
+    type={showPassword ? 'text' : 'password'}
+    placeholder="Password"
+    value={form.password}
+    onChange={handle}
+    onKeyDown={handleKey}
+  />
+  <button
+    type="button"
+    onClick={() => setShowPassword(!showPassword)}
+    style={{
+      position: 'absolute',
+      right: 12,
+      top: '50%',
+      transform: 'translateY(-50%)',
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      fontSize: 16,
+      color: '#6FCFA0',
+      padding: 0,
+    }}
+  >
+    {showPassword ? '🙈' : '👁️'}
+  </button>
+</div>
+
+const [showPassword, setShowPassword] = useState(false);
           {mode === 'register' && (
             <select style={styles.input} name="role" value={form.role} onChange={handle}>
               <option value="CITIZEN">Citizen</option>
