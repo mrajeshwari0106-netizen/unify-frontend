@@ -7,6 +7,7 @@ export default function Login() {
   const [form, setForm] = useState({ username: '', password: '', role: 'CITIZEN' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
