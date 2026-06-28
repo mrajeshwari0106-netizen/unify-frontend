@@ -49,7 +49,6 @@ export default function Profile() {
     }
   };
 
-  const isError = message.startsWith('error:');
   const isSuccess = message.startsWith('success:');
   const msgText = message.replace(/^(error|success):/, '');
 
